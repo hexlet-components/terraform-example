@@ -8,7 +8,7 @@ import "package://github.com/jdx/hk/releases/download/v2.8.1/hk@2.8.1#/Builtins.
 local fast = new Mapping<String, Step> {
   ["tflint"] {
     glob = List("**/*.tf")
-    check = "tflint --recursive --config "$(pwd)/.tflint.hcl""
+    check = "tflint --recursive --config \"$(pwd)/.tflint.hcl\""
   }
   ["rumdl"] = Builtins.rumdl
   ["typos"] = Builtins.typos
