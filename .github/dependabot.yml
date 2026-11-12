@@ -6,13 +6,16 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 2
     commit-message:
       prefix: "build(deps)"
     groups:
-      all-terraform-dependencies:
-        patterns:
-          - "*"
+      all-terraform-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      all-terraform-major:
+        patterns: ["*"]
+        update-types: ["major"]
 
   - package-ecosystem: "github-actions"
     cooldown:
@@ -20,10 +23,13 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 2
     commit-message:
       prefix: "build(deps)"
     groups:
-      all-github-actions-dependencies:
-        patterns:
-          - "*"
+      all-github-actions-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      all-github-actions-major:
+        patterns: ["*"]
+        update-types: ["major"]
